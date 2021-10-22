@@ -41,7 +41,7 @@ def read_features(file_name):
     record_iterator = tf.python_io.tf_record_iterator(path=file_name)
 
     for record in record_iterator:
-        if isinstance(example, tf.train.Example):
+        if isinstance(record, tf.train.Example):
             example.ParseFromString(record)
             f = example.features
 
